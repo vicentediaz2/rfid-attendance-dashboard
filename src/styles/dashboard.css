@@ -1,11 +1,11 @@
 :root {
-  --sidebar-width: 130px;
-  --topbar-height: 58px;
-  --card-gap: 12px;
-  --metric-height: 74px;
-  --scene-height: 356px;
-  --iot-card-width: 132px;
-  --table-row-height: 32px;
+  --sidebar-width: 172px;
+  --topbar-height: 72px;
+  --card-gap: 16px;
+  --metric-height: 112px;
+  --scene-height: 410px;
+  --iot-card-width: 220px;
+  --table-row-height: 44px;
 }
 
 .icon-sprite {
@@ -19,8 +19,8 @@
   min-height: 100vh;
   padding: var(--page-padding);
   background:
-    radial-gradient(circle at top left, rgba(57, 62, 76, 0.35), transparent 24%),
-    linear-gradient(180deg, #1a1b20 0%, #1f2027 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(243, 246, 251, 0.92)),
+    var(--page-background);
 }
 
 .app-shell {
@@ -37,7 +37,7 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  background: #272830;
+  background: #f8fafc;
   border-right: 1px solid var(--panel-border);
 }
 
@@ -47,7 +47,8 @@
   gap: 8px;
   padding: 18px 14px 16px;
   border-bottom: 1px solid var(--panel-border);
-  font-size: 0.76rem;
+  color: var(--text-primary);
+  font-size: 0.88rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -65,7 +66,7 @@
 }
 
 .sidebar__brand-text {
-  max-width: 90px;
+  max-width: 124px;
 }
 
 .sidebar__nav {
@@ -86,12 +87,13 @@
   gap: 10px;
   width: 100%;
   min-height: 32px;
-  padding: 7px 10px;
+  padding: 10px 12px;
   border: 0;
   border-radius: 5px;
   color: var(--text-secondary);
   text-align: left;
-  font-size: 0.64rem;
+  font-size: 0.78rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   cursor: pointer;
@@ -100,7 +102,7 @@
 
 .sidebar__item--active {
   position: relative;
-  background: rgba(255, 255, 255, 0.08);
+  background: #e8f1ff;
   color: var(--text-primary);
 }
 
@@ -143,9 +145,9 @@
 
 .topbar__window {
   min-height: 28px;
-  background: rgba(20, 21, 27, 0.22);
+  background: #f1f5f9;
   color: var(--text-secondary);
-  font-size: 0.55rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -189,8 +191,9 @@
 
 .topbar__title {
   margin: 0;
-  font-size: 1.15rem;
-  line-height: 1.1;
+  color: var(--text-primary);
+  font-size: 1.45rem;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
@@ -205,11 +208,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  width: min(100%, 210px);
+  width: min(100%, 260px);
   padding: 8px 10px;
   border: 1px solid var(--panel-border);
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.06);
+  background: #ffffff;
 }
 
 .topbar__search input {
@@ -218,6 +221,7 @@
   outline: 0;
   color: var(--text-primary);
   background: transparent;
+  font-size: 0.95rem;
 }
 
 .topbar__search input::placeholder {
@@ -244,11 +248,11 @@
 }
 
 .topbar__avatar {
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+  background: #dbeafe;
+  box-shadow: 0 0 0 1px #bfdbfe;
 }
 
 .topbar__user-copy {
@@ -259,12 +263,12 @@
 
 .topbar__user-copy strong,
 .topbar__user-copy span {
-  font-size: 0.62rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
 }
 
 .topbar__user-copy small {
-  font-size: 0.52rem;
+  font-size: 0.78rem;
   color: var(--text-secondary);
 }
 
@@ -312,29 +316,31 @@
 }
 
 .plant-view__summary-metric {
-  padding: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 16px;
+  border: 1px solid var(--panel-border);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.02);
+  background: #f8fafc;
 }
 
 .plant-view__summary-metric span {
   display: block;
   margin-bottom: 8px;
   color: var(--text-secondary);
-  font-size: 0.62rem;
+  font-size: 0.78rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .plant-view__summary-metric strong {
-  font-size: 1.4rem;
+  color: var(--text-primary);
+  font-size: 1.75rem;
 }
 
 .plant-view__empty-state {
   padding: 28px 14px 6px;
   color: var(--text-secondary);
-  font-size: 0.76rem;
+  font-size: 0.95rem;
 }
 
 .event-log-view {
@@ -366,7 +372,7 @@
 .panel-card,
 .scene-card,
 .iot-card {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.01);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
 }
 
 .panel-card__header {
@@ -376,10 +382,10 @@
   gap: 10px;
   padding: 11px 11px 0;
   color: var(--text-primary);
-  font-size: 0.58rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.04em;
 }
 
 .metric-card {
@@ -397,11 +403,12 @@
 }
 
 .metric-card__value-row strong {
-  font-size: 1.02rem;
+  color: var(--text-primary);
+  font-size: 1.55rem;
 }
 
 .metric-card__value-row span {
-  font-size: 0.56rem;
+  font-size: 0.82rem;
   font-weight: 700;
 }
 
@@ -457,7 +464,8 @@
 }
 
 .table-shell {
-  padding: 8px 11px 0;
+  padding: 12px 11px 0;
+  overflow-x: auto;
 }
 
 .table-shell--log {
@@ -474,51 +482,57 @@
 .data-table th,
 .data-table td {
   height: var(--table-row-height);
+  padding: 0 10px;
   text-align: left;
-  font-size: 0.54rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
 }
 
 .data-table th {
-  color: #b8bccd;
+  color: var(--text-primary);
+  background: #f8fafc;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 .data-table tbody tr + tr td {
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-top: 1px solid #e5eaf2;
+}
+
+.data-table tbody tr:hover td {
+  background: #f8fafc;
 }
 
 .status-pill {
   display: inline-flex;
   align-items: center;
-  min-height: 18px;
-  padding: 0 8px;
+  min-height: 26px;
+  padding: 0 10px;
   border-radius: 999px;
-  font-size: 0.48rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 .status-pill--green {
-  color: #79f4b8;
-  background: rgba(41, 209, 120, 0.16);
+  color: #166534;
+  background: #dcfce7;
 }
 
 .status-pill--blue {
-  color: #8eb7ff;
-  background: rgba(79, 145, 255, 0.18);
+  color: #1d4ed8;
+  background: #dbeafe;
 }
 
 .status-pill--amber {
-  color: #ffdb73;
-  background: rgba(216, 171, 18, 0.18);
+  color: #92400e;
+  background: #fef3c7;
 }
 
 .status-pill--red {
-  color: #ff878c;
-  background: rgba(255, 93, 98, 0.18);
+  color: #b91c1c;
+  background: #fee2e2;
 }
 
 .panel-card--chart {
@@ -539,21 +553,22 @@
 .operations-panel__highlight {
   padding: 12px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: #f8fafc;
+  border: 1px solid var(--panel-border);
 }
 
 .operations-panel__highlight span {
   display: block;
   margin-bottom: 6px;
   color: var(--text-secondary);
-  font-size: 0.58rem;
+  font-size: 0.78rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 .operations-panel__highlight strong {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 .operations-panel__highlight--teal strong {
@@ -577,10 +592,10 @@
 
 .operations-panel__section h3 {
   margin: 0 0 10px;
-  font-size: 0.62rem;
-  color: #b8bccd;
+  font-size: 0.86rem;
+  color: var(--text-primary);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }
 
 .operations-panel__dock-list,
@@ -597,24 +612,25 @@
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 11px;
+  padding: 12px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: #f8fafc;
+  border: 1px solid var(--panel-border);
 }
 
 .operations-panel__dock-item strong,
 .operations-panel__alert strong {
   display: block;
   margin-bottom: 4px;
-  font-size: 0.62rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
 }
 
 .operations-panel__dock-item span,
 .operations-panel__dock-item small,
 .operations-panel__alert span {
   color: var(--text-secondary);
-  font-size: 0.56rem;
+  font-size: 0.82rem;
 }
 
 .operations-panel__dock-item small {
@@ -627,15 +643,18 @@
 }
 
 .operations-panel__alert--red {
-  border-color: rgba(255, 93, 98, 0.2);
+  border-color: #fecaca;
+  background: #fff7f7;
 }
 
 .operations-panel__alert--amber {
-  border-color: rgba(216, 171, 18, 0.2);
+  border-color: #fde68a;
+  background: #fffbeb;
 }
 
 .operations-panel__alert--blue {
-  border-color: rgba(79, 145, 255, 0.2);
+  border-color: #bfdbfe;
+  background: #eff6ff;
 }
 
 .traffic-chart {
@@ -652,15 +671,15 @@
       to top,
       transparent,
       transparent 25px,
-      rgba(255, 255, 255, 0.035) 25px,
-      rgba(255, 255, 255, 0.035) 26px
+      #e5eaf2 25px,
+      #e5eaf2 26px
     ),
     repeating-linear-gradient(
       to right,
       transparent,
       transparent 44px,
-      rgba(255, 255, 255, 0.03) 44px,
-      rgba(255, 255, 255, 0.03) 45px
+      #eef2f7 44px,
+      #eef2f7 45px
     );
   border-radius: 8px;
 }
@@ -693,7 +712,7 @@
   inset: auto 0 0;
   height: 18px;
   color: var(--text-muted);
-  font-size: 0.45rem;
+  font-size: 0.78rem;
 }
 
 .traffic-chart__axis span {
@@ -707,6 +726,7 @@
   min-height: 100%;
   padding: 0;
   overflow: hidden;
+  background: #ffffff;
 }
 
 .facility-scene {
@@ -924,7 +944,7 @@
   bottom: 10px;
   width: min(var(--iot-card-width), calc(100% - 20px));
   padding-bottom: 10px;
-  background: rgba(36, 37, 43, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(10px);
 }
 
@@ -946,11 +966,12 @@
 .sensor-list__item span,
 .iot-card__logs small,
 .iot-card__logs li {
-  font-size: 0.52rem;
+  font-size: 0.82rem;
 }
 
 .sensor-list__item strong {
   display: block;
+  color: var(--text-primary);
 }
 
 .sensor-list__item span {
