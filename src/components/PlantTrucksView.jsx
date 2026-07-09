@@ -6,7 +6,7 @@ const PLANT_VIEW_CONFIG = {
   summaryCardClassName: "panel-card plant-view__summary-card",
   summaryTitle: "Resumen De Planta",
   tableTitle: "Camiones Actualmente Dentro De Planta",
-  tableHeaders: ["ID Camion", "Matricula", "Muelle", "Estado", "Hora Entrada"],
+  tableHeaders: ["ID Camion", "Patente", "Muelle", "Estado", "Hora Entrada"],
   emptyMessage: "No hay camiones dentro de la planta en este momento."
 };
 
